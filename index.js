@@ -56,7 +56,6 @@ async function getData() {
 
     }
 
-
     const sortByAgeDown = (arr) => {
         clearPeopleArr()
         const sortArrDown = arr.sort((a, b) => a.dob.age < b.dob.age ? 1 : -1)
@@ -89,7 +88,10 @@ async function getData() {
 
     const searchPeople = (arr) => {
         let results = arr.filter((person) => {
-            return person.name.first.indexOf(input.value) !== -1 || person.name.last.indexOf(input.value) !== -1
+            let firstName = (person.name.first)
+            let lastName = (person.name.last)
+
+            return (firstName.toLowerCase().indexOf(input.value.toLowerCase()) !== -1 || lastName.toLowerCase().indexOf(input.value.toLowerCase()) !== -1)
         })
         return results
     }
