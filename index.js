@@ -37,7 +37,7 @@ async function getData() {
         return div
     }
 
-    const rerenderEntirePeoples = (arr) => {
+    let rerenderEntirePeoples = (arr = startData) => {
         arr.forEach(user => {
             list.append(renderList(user))
         })
@@ -48,7 +48,6 @@ async function getData() {
         list.innerHTML = '';
     }
 
-    // сортировка по возрастанию
     const sortByAgeUp = (arr) => {
         clearPeopleArr()
         const sortArrUp = arr.sort((a, b) => a.dob.age > b.dob.age ? 1 : -1)
@@ -57,8 +56,8 @@ async function getData() {
 
     }
 
-    // сортировка по убыванию
-    function sortByAgeDown(arr) {
+
+    const sortByAgeDown = (arr) => {
         clearPeopleArr()
         const sortArrDown = arr.sort((a, b) => a.dob.age < b.dob.age ? 1 : -1)
         rerenderEntirePeoples(sortArrDown)
@@ -95,13 +94,13 @@ async function getData() {
         return results
     }
 
-    const rerenderSortedByInput = (arr) => {
+    const rerenderSortedByInput = () => {
         if (!input.value) {
             clearPeopleArr()
-            rerenderEntirePeoples(arr)
+            rerenderEntirePeoples()
         } else {
             clearPeopleArr()
-            arr = searchPeopleFn()
+            const arr = searchPeopleFn()
             rerenderEntirePeoples(arr)
         }
     }
