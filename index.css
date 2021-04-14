@@ -1,0 +1,54 @@
+* {
+    font-size: 15px;
+    box-sizing: border-box;
+    font-family: 'Shippori Mincho', serif;
+}
+body {
+    background-image: linear-gradient(90deg, #ee5c87, #f1a4b5, #d587b3);
+
+    width: 100%;
+}
+
+.root {
+    margin-left: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: none;
+}
+div {
+    width: 60rem;
+    margin: 2px;
+}
+#list {
+    width: 70rem;
+    //border: #771b1b 2px solid;
+
+}
+
+wrapper {
+    border: #2a5a0e 2px solid;
+    width: 17rem;
+    height: 16rem;
+    background-color: rgb(189, 195, 130);
+    align-content: center;
+    display: block;
+    margin: 0.5rem auto;
+
+}
+
+img {
+    border-radius: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+button {
+    width: 40%;
+    height: 10%;
+    font-size: 12px;
+
+}
